@@ -18,7 +18,7 @@
  * @link      http://www.techdivision.com
  */
 
-namespace TechDivision\Import\Product\Image\Types\Repositories;
+namespace TechDivision\ImportProductImageTypes\Repositories;
 
 
 /**
@@ -36,7 +36,7 @@ class ImageTypeRepository extends \TechDivision\Import\Repositories\ImageTypeRep
     /**
      * @return array
      */
-    public function extendsImageTypesFromDatabase()
+        public function extendsImageTypesFromDatabase()
     {
         //Override this function in case you want to extends the image types
         return ['test_test_de_labelXXX' => 'test_test_de_imageXXX'];

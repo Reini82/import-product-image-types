@@ -18,7 +18,7 @@
  * @link      http://www.techdivision.com
  */
 
-namespace TechDivision\ImportProductImageTypes\DependencyInjection;
+namespace TechDivision\Import\Product\Image\Types\DependencyInjection;
 
 
 use Symfony\Component\Config\FileLocator;

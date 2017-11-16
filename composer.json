@@ -32,7 +32,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "TechDivision\\ImportProductImageTypes\\": [
+            "TechDivision\\Import\\Product\\Image\\Types\\": [
                 "src/",
                 "symfony/"
             ]

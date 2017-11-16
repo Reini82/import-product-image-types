@@ -18,7 +18,7 @@
  * @link      http://www.techdivision.com
  */
 
-namespace TechDivision\ImportProductImageTypes\Repositories;
+namespace TechDivision\Import\Product\Image\Types\Repositories;
 
 
 /**

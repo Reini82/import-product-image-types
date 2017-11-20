@@ -34,12 +34,50 @@ class ImageTypeRepository extends \TechDivision\Import\Repositories\ImageTypeRep
 {
 
     /**
+     * The prepared statement to load an existing product media gallery value entity.
+     *
+     * @var \PDOStatement
+     */
+    protected $statement;
+
+
+    /**
+     * Initializes the repository's prepared statements.
+     *
+     * @return void
+     */
+    public function init()
+    {
+        $selectStmt = "SELECT main_table.attribute_code FROM eav_attribute AS main_table
+         INNER JOIN eav_entity_type AS entity_type ON main_table.entity_type_id = entity_type.entity_type_id
+         LEFT JOIN eav_entity_attribute ON main_table.attribute_id = eav_entity_attribute.attribute_id
+         INNER JOIN catalog_eav_attribute AS additional_table ON main_table.attribute_id = additional_table.attribute_id 
+         WHERE (entity_type_code = 'catalog_product') AND (frontend_input = 'media_image') AND main_table.is_user_defined = 1
+         GROUP BY main_table.attribute_code";
+
+        // initialize the prepared statements
+        $this->statement = $this->getConnection()->prepare($selectStmt);
+
+    }
+
+
+    /**
+     * Enrich the image types with all custom image attributes
+     *
      * @return array
      */
-        public function extendsImageTypesFromDatabase()
+    public function extendsImageTypesFromDatabase()
     {
-        //Override this function in case you want to extends the image types
-        return ['test_test_de_labelXXX' => 'test_test_de_imageXXX'];
+        $returnResult = array();
+        $this->statement->execute();
+        $result = $this->statement->fetchAll(\PDO::FETCH_ASSOC);
+
+        foreach ($result as $key => $value) {
+            $returnResult[$value['attribute_code']] = $value['attribute_code'];
+        }
+
+        return $returnResult;
     }
+
 
 }

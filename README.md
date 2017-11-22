@@ -7,7 +7,7 @@
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/techdivision/import-product-image-types/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/techdivision/import-product-image-types/?branch=master) [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/techdivision/import-product-image-types/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/techdivision/import-product-image-types/?branch=master)
 
 ## Introduction
-This module provides the functionality to enrich the given image types with all user defined product attributes with type media/image.
+This module provides the functionality to enrich the given image types with all user defined product attributes with type media/image. 
 
 ## Configuration
 In case you want to use the extension, make sure to expand your composer.json from the origin project.
@@ -22,3 +22,4 @@ In case you want to use the extension, make sure to expand your composer.json fr
     [...]
 }
 ```
+The columns from the csv, that would be imported, have to be a prefix with "_image" for the image and "_image_label" for the image label.

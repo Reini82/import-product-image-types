@@ -22,4 +22,4 @@ In case you want to use the extension, make sure to expand your composer.json fr
     [...]
 }
 ```
-The columns from the csv, that would be imported, have to be a prefix with "_image" for the image and "_image_label" for the image label.
+The columns from the csv, that would be imported, have to be a prefixed with "_image" for the image and "_image_label" for the image label.
